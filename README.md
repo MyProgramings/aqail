@@ -6,4 +6,4 @@ Aqail is a site.
 
 To get started with this site:
 
-open http://localhost:3000
+open https://aqail.vercel.app/
