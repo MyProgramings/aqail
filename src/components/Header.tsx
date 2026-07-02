@@ -385,7 +385,7 @@ export function Header() {
               >
                 <div className="relative">
                   <AvatarContainer
-                    className="absolute top-3 left-0 origin-left transition-opacity"
+                    className="absolute top-3 right-0 origin-right transition-opacity"
                     style={{
                       opacity: 'var(--avatar-border-opacity, 0)',
                       transform: 'var(--avatar-border-transform)',
@@ -393,7 +393,7 @@ export function Header() {
                   />
                   <Avatar
                     large
-                    className="block h-16 w-16 origin-left"
+                    className="block h-16 w-16 origin-right"
                     style={{ transform: 'var(--avatar-image-transform)' }}
                   />
                 </div>
