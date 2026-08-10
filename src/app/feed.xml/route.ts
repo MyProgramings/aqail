@@ -21,8 +21,8 @@ export async function GET(req: Request) {
     author,
     id: siteUrl,
     link: siteUrl,
-    image: `${siteUrl}/favicon.ico`,
-    favicon: `${siteUrl}/favicon.ico`,
+    image: `${siteUrl}/app/avatar.jpeg`,
+    favicon: `${siteUrl}/app/avatar.jpeg`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: {
       rss2: `${siteUrl}/feed.xml`,
