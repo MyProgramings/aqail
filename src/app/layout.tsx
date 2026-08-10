@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Abdullah Baaqail',
     default:
-      'Abdullah Baaqail - Software designer, founder, and amateur astronaut',
+      'Abdullah Baaqail - UI/UX designer',
   },
   description:
     'I`m Abdullah, a UI/UX designer based in Riyadh. I develop solutions that empower individuals to explore their digital world on their own terms.',
