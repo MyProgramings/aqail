@@ -11,10 +11,13 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
+import tostapp from '@/images/logos/tostapp.png'
+import nabid from '@/images/logos/nabid.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
+import image6 from '@/images/photos/image-6.jpg'
+import file from '@/images/photos/file.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -145,6 +148,7 @@ interface Role {
   logo: ImageProps['src']
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
+  href?: string
 }
 
 function Role({ role }: { role: Role }) {
@@ -156,8 +160,8 @@ function Role({ role }: { role: Role }) {
   let endLabel = typeof role.end === 'string' ? role.end : role.end.label
   let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
 
-  return (
-    <li className="flex gap-4">
+  const content = (
+    <>
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
@@ -180,42 +184,47 @@ function Role({ role }: { role: Role }) {
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
-    </li>
+    </>
   )
+
+  if (role.href) {
+    return (
+      <li className="flex gap-4">
+        <Link
+          href={role.href}
+          target="_blank"
+          rel="noreferrer"
+          className="flex flex-1 gap-4 rounded-xl transition"
+        >
+          {content}
+        </Link>
+      </li>
+    )
+  }
+
+  return <li className="flex gap-4">{content}</li>
 }
 
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'بلانيتاريا',
-      title: 'الرئيس التنفيذي',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'توست - Tost',
+      title: 'مصمم UI&UX',
+      logo: tostapp,
+      start: '2026',
       end: {
         label: 'حتى الان',
         dateTime: new Date().getFullYear().toString(),
       },
+      href: '#',
     },
     {
-      company: 'Airbnb',
-      title: 'مصمم منتجات',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-    },
-    {
-      company: 'فيسبوك',
-      title: 'مهندس برمجيات iOS',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'ستاربكس',
-      title: 'مشرف وردية',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'نبض - nabd',
+      title: 'مصمم UI&UX',
+      logo: nabid,
+      start: 'Aug-2025',
+      end: 'Nov-2025',
+      href: 'https://www.behance.net/gallery/245212853/_',
     },
   ]
 
@@ -223,7 +232,7 @@ function Resume() {
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="mr-3">عمل</span>
+        <span className="mr-3">أعمالي</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
@@ -244,7 +253,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[image1, image2, image6, file, image5].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -276,24 +285,24 @@ export default async function Home() {
             مصمم UI&UX، ومطور ويب.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            أنا عبد الله باعقيل، مصمم منتجات ورائد أعمال أقيم في مدينة المكلا.
-            أنا المؤسس والرئيس التنفيذي لشركة ريدي سوفت، حيث نقوم بتطوير
-            تقنيات تمكّن الأفراد من استكشاف عالمهم الرقمي وفقًا لشروطهم الخاصة.
+            أنا عبد الله باعقيل، مصمم واجهات وتجربة المستخدم.
+            حيث أقوم بتطوير
+            حلول تمكّن الأفراد من استكشاف عالمهم الرقمي وفقًا لشروطهم الخاصة.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="#" aria-label="تابع على X" icon={XIcon} />
+            <SocialLink href="https://x.com/ABaagail73324" aria-label="تابع على X" icon={XIcon} />
             <SocialLink
-              href="#"
+              href="https://www.instagram.com/a.baagail/"
               aria-label="تابعونا على إنستغرام"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="#"
+              href="https://github.com/MyProgramings"
               aria-label="تابعنا على GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/abaaqail/"
               aria-label="تابعنا على لينكدإن"
               icon={LinkedInIcon}
             />
@@ -303,15 +312,15 @@ export default async function Home() {
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
+          <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <Resume />
+            <Newsletter />
+          </div>
+          {/* <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
-          </div>
-          <div className="space-y-10 lg:pr-16 xl:pr-24">
-            <Newsletter />
-            <Resume />
-          </div>
+          </div> */}
         </div>
       </Container>
     </>

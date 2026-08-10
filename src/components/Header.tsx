@@ -166,11 +166,11 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">نبذة</NavItem>
-        <NavItem href="/articles">المقالات</NavItem>
-        <NavItem href="/projects">المشاريع</NavItem>
-        <NavItem href="/speaking">التحدث</NavItem>
-        <NavItem href="/uses">الاستخدامات</NavItem>
+        <NavItem href="/#">نبذة</NavItem>
+        <NavItem href="/#">المقالات</NavItem>
+        <NavItem href="/#">المشاريع</NavItem>
+        <NavItem href="/#">التحدث</NavItem>
+        <NavItem href="/#">الاستخدامات</NavItem>
       </ul>
     </nav>
   )
