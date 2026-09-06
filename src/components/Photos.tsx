@@ -132,29 +132,31 @@ export function Photos() {
 
   return (
     <>
-      <div
-        dir="ltr"
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden px-4 py-4 touch-pan-x sm:justify-center sm:gap-8 sm:px-0"
-      >
-        {photos.map((photo, photoIndex) => (
-          <button
-            key={photo.src.src}
-            type="button"
-            onClick={() => setSelectedPhoto(photo)}
-            aria-label={`عرض تفاصيل ${photo.title}`}
-            className={clsx(
-              'relative h-[184px] w-[368px] flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 text-left shadow-sm transition hover:scale-[1.02] focus:ring-2 focus:ring-teal-500 focus:outline-hidden sm:rounded-2xl dark:bg-zinc-800',
-              rotations[photoIndex % rotations.length],
-            )}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.title}
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </button>
-        ))}
+      <div className="w-full min-w-0 overflow-x-auto overflow-y-hidden touch-pan-x">
+        <div
+          dir="ltr"
+          className="flex w-max min-w-full snap-x snap-mandatory gap-5 px-4 py-4 sm:gap-8 sm:px-0"
+        >
+          {photos.map((photo, photoIndex) => (
+            <button
+              key={photo.src.src}
+              type="button"
+              onClick={() => setSelectedPhoto(photo)}
+              aria-label={`عرض تفاصيل ${photo.title}`}
+              className={clsx(
+                'relative h-[184px] w-[368px] flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 text-left shadow-sm transition hover:scale-[1.02] focus:ring-2 focus:ring-teal-500 focus:outline-hidden sm:rounded-2xl dark:bg-zinc-800',
+                rotations[photoIndex % rotations.length],
+              )}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.title}
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </button>
+          ))}
+        </div>
       </div>
 
       {selectedPhoto && (
