@@ -9,6 +9,17 @@ import file from '@/images/photos/file.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import img1 from '@/images/photos/1.webp'
+import img2 from '@/images/photos/2.webp'
+import img3 from '@/images/photos/3.webp'
+import img4 from '@/images/photos/4.webp'
+import img5 from '@/images/photos/5.webp'
+import img6 from '@/images/photos/6.webp'
+import img7 from '@/images/photos/7.webp'
+import img9 from '@/images/photos/9.webp'
+import img10 from '@/images/photos/10.webp'
+import img11 from '@/images/photos/11.webp'
+import img12 from '@/images/photos/12.webp'
 
 type Photo = {
   src: StaticImageData
@@ -39,6 +50,61 @@ const photos: Photo[] = [
   },
   {
     src: image5,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img1,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img2,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img3,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img4,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img5,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img6,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img7,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img9,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img10,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img11,
+    title: 'تفاصيل من العمل',
+    description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
+  },
+  {
+    src: img12,
     title: 'تفاصيل من العمل',
     description: 'لحظة من مراحل التصميم وصناعة التفاصيل الصغيرة.',
   },
@@ -77,7 +143,7 @@ export function Photos() {
             onClick={() => setSelectedPhoto(photo)}
             aria-label={`عرض تفاصيل ${photo.title}`}
             className={clsx(
-              'relative aspect-9/10 w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 text-left shadow-sm transition hover:scale-[1.02] focus:ring-2 focus:ring-teal-500 focus:outline-hidden sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              'relative h-[184px] w-[368px] flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 text-left shadow-sm transition hover:scale-[1.02] focus:ring-2 focus:ring-teal-500 focus:outline-hidden sm:rounded-2xl dark:bg-zinc-800',
               rotations[photoIndex % rotations.length],
             )}
           >
@@ -103,13 +169,13 @@ export function Photos() {
             className="relative grid max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl sm:grid-cols-[minmax(0,1.25fr)_minmax(16rem,0.75fr)] dark:bg-zinc-900"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[4/3] min-h-64 sm:aspect-auto sm:min-h-[28rem]">
+            <div className="relative aspect-[4/3] min-h-64 bg-zinc-100 sm:aspect-auto sm:min-h-[28rem] dark:bg-zinc-950">
               <Image
                 src={selectedPhoto.src}
                 alt={selectedPhoto.title}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div dir="rtl" className="flex flex-col p-6 sm:p-8">
